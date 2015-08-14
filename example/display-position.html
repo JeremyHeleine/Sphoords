@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Current position</title>
+		<meta name="viewport" content="initial-scale=1.0" />
+		<link rel="stylesheet" media="screen" href="display-position.css" />
+		<script src="display-position.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Current position of your smartphone</h1>
+		</header>
+
+		<p>The orientation of the device reading the save-position.html file is displayed on the sphere below. You can better see your movements by rotating the sphere (just use your mouse to do that).</p>
+
+		<div id="container">
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<p>Current longitude: <span id="long">0</span>°</p>
+
+		<p>Current latitude: <span id="lat">0</span>°</p>
+
+		<p>Current screen orientation: <span id="orientation"></span></p>
+	</body>
+
+</html>
