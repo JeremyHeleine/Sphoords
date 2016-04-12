@@ -146,7 +146,7 @@ var Sphoords = function() {
 
 		// Coordinates depend on the orientation
 		var theta = 0, phi = 0;
-		
+
 		switch (orientation) {
 			// Portrait mode
 			case 'portrait-primary':
@@ -322,7 +322,7 @@ var Sphoords = function() {
 
 Sphoords.getScreenOrientation = function() {
 	var screen_orientation = null;
-	
+
 	if (!!screen.orientation)
 		screen_orientation = screen.orientation;
 
