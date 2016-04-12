@@ -132,7 +132,7 @@ var Sphoords = function() {
 	this.isEventAttached = function() {
 		return recording;
 	};
-
+	
 	/**
 	 * Records the current orientation
 	 * @private
@@ -152,7 +152,7 @@ var Sphoords = function() {
 			case 'portrait-primary':
 				theta = evt.alpha + evt.gamma;
 				phi = evt.beta - 90;
-
+				
 				break;
 
 			// Landscape mode
@@ -177,6 +177,18 @@ var Sphoords = function() {
 							break;
 					}
 				}
+				
+				//fix to work on iOS (tested on Safari and Chrome)
+				if( engine === 'WebKit' && !!window.orientation ){
+					if( phi < 0 ){
+						phi = (phi + 180) * -1;
+					}
+					if( theta >= 180 ){
+						theta = theta - 180;
+					} else {
+						theta = theta + 180;
+					}
+				}
 
 				break;
 
@@ -194,14 +206,26 @@ var Sphoords = function() {
 						case 'Blink':
 							phi += 180;
 							break;
-
+							
 						case 'Gecko':
 						default:
 							phi = -phi;
 							break;
 					}
 				}
-
+				
+				//fix to work on iOS (tested on Safari and Chrome)
+				if( engine === 'WebKit' && !!window.orientation ){
+					if( phi < 0 ){
+						phi = (phi + 180) * -1;
+					}
+					if( theta >= 180 ){
+						theta = theta - 180;
+					} else {
+						theta = theta + 180;
+					}
+				}
+				
 				break;
 
 			// Portrait mode (inversed)
