@@ -1,8 +1,8 @@
 /*
-* Sphoords v0.1
+* Sphoords v0.1.1
 * http://jeremyheleine.me
 *
-* Copyright (c) 2015 Jérémy Heleine
+* Copyright (c) 2015,2016 Jérémy Heleine
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -225,7 +225,7 @@ var Sphoords = function() {
 						theta = theta + 180;
 					}
 				}
-				
+
 				break;
 
 			// Portrait mode (inversed)
@@ -355,9 +355,9 @@ Sphoords.getScreenOrientation = function() {
 
 	else if (!!screen.msOrientation)
 		screen_orientation = screen.msOrientation;
-	
+
 	else if (!!window.orientation || window.orientation === 0)
-		switch (window.orientation) {  
+		switch (window.orientation) {
 			case 0:
 				screen_orientation = 'portrait-primary';
 				break;
